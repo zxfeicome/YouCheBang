@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75104DE43CC648463CDD8BC6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9FDB6D75464B3C5EE75260 /* libPods.a */; };
 		E9182AE61B550007008DD335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9182AE51B550007008DD335 /* main.m */; };
 		E9182AE91B550007008DD335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9182AE81B550007008DD335 /* AppDelegate.m */; };
 		E9182AEC1B550007008DD335 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9182AEB1B550007008DD335 /* ViewController.m */; };
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3985F9AC8CD2EBB6C92A9A16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3D9FDB6D75464B3C5EE75260 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C56B31EC475114ECCEC778F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E9182AE01B550007008DD335 /* YouCheBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouCheBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9182AE41B550007008DD335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9182AE51B550007008DD335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75104DE43CC648463CDD8BC6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A026DFCB098AFFC3166A7E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D9FDB6D75464B3C5EE75260 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A271789952DE359D229DEF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3985F9AC8CD2EBB6C92A9A16 /* Pods.debug.xcconfig */,
+				C56B31EC475114ECCEC778F7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E9182AD71B550007008DD335 = {
 			isa = PBXGroup;
 			children = (
 				E9182AE21B550007008DD335 /* YouCheBang */,
 				E9182AFC1B550007008DD335 /* YouCheBangTests */,
 				E9182AE11B550007008DD335 /* Products */,
+				1A271789952DE359D229DEF6 /* Pods */,
+				1A026DFCB098AFFC3166A7E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9182B031B550007008DD335 /* Build configuration list for PBXNativeTarget "YouCheBang" */;
 			buildPhases = (
+				B0E786704263C748357DFCCB /* Check Pods Manifest.lock */,
 				E9182ADC1B550007008DD335 /* Sources */,
 				E9182ADD1B550007008DD335 /* Frameworks */,
 				E9182ADE1B550007008DD335 /* Resources */,
+				AF8D60D8B98CDE5E53A19373 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AF8D60D8B98CDE5E53A19373 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0E786704263C748357DFCCB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E9182ADC1B550007008DD335 /* Sources */ = {
@@ -345,9 +404,11 @@
 		};
 		E9182B041B550007008DD335 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3985F9AC8CD2EBB6C92A9A16 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YouCheBang/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,9 +416,11 @@
 		};
 		E9182B051B550007008DD335 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C56B31EC475114ECCEC778F7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YouCheBang/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +479,7 @@
 				E9182B051B550007008DD335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9182B061B550007008DD335 /* Build configuration list for PBXNativeTarget "YouCheBangTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +488,7 @@
 				E9182B081B550007008DD335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
